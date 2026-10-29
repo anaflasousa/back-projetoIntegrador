@@ -1,65 +1,67 @@
-
 [
   {
-    "id": "quiz-1",
+    "id": "1",
     "tipo": "quiz",
-    "enunciado": "Na frase \"O aluno estudou bastante\", qual é o sujeito?",
+    "enunciado": "Enquanto caminhava pelas ruas de Candeia, Samuel contou aos moradores o que havia descoberto dentro da cabeça da estátua. Qual é a função sintática de 'aos moradores'?",
     "opcoes": [
-      "Sujeito",
       "Objeto direto",
-      "Predicado",
+      "Complemento nominal",
+      "Objeto indireto",
       "Adjunto adverbial"
     ],
-    "respostaCorreta": 0,
-    "explicacao": "\"O aluno\" é o sujeito da oração."
+    "respostaCorreta": 2,
+    "explicacao": "O termo 'aos moradores' funciona como objeto indireto, pois indica a quem Samuel contou a descoberta. O verbo 'contar', nesse contexto, apresenta um objeto direto ('o que havia descoberto') e um objeto indireto ('aos moradores')."
   },
   {
-    "id": "vf-1",
-    "tipo": "verdadeiro-falso",
-    "enunciado": "O sujeito é sempre a primeira palavra de uma oração.",
+    "id": "2",
+    "tipo": "quiz",
+    "enunciado": "Samuel ouviu as vozes das mulheres dentro da estátua. Qual é a função sintática de 'as vozes das mulheres'?",
     "opcoes": [
-      "Verdadeiro",
-      "Falso"
+      "Objeto direto",
+      "Objeto indireto",
+      "Adjunto adnominal",
+      "Sujeito simples"
     ],
-    "respostaCorreta": 1,
-    "explicacao": "O sujeito nem sempre aparece no início da oração. Exemplo: \"Chegaram os visitantes\"."
+    "respostaCorreta": 0,
+    "explicacao": "O termo 'as vozes das mulheres' é objeto direto do verbo 'ouviu', pois completa seu sentido sem preposição obrigatória."
   },
   {
-    "id": "erro-1",
-    "tipo": "encontre-erro",
-    "enunciado": "Na frase \"A menina comprou um caderno\", qual análise está incorreta?",
+    "id": "3",
+    "tipo": "quiz",
+    "enunciado": "Com o passar dos dias, a confiança de Samuel na possibilidade de transformar a realidade de Candeia tornou-se cada vez maior. Qual é a função sintática de 'na possibilidade de transformar a realidade de Candeia'?",
     "opcoes": [
-      "\"A menina\" é o sujeito.",
-      "\"Comprou um caderno\" é o predicado.",
-      "\"Um caderno\" é o sujeito."
+      "Objeto indireto",
+      "Adjunto adverbial de finalidade",
+      "Complemento nominal",
+      "Aposto explicativo"
     ],
     "respostaCorreta": 2,
-    "explicacao": "\"Um caderno\" é objeto direto, não sujeito."
+    "explicacao": "O termo completa o sentido do substantivo abstrato 'confiança', especificando em que consiste essa confiança."
   },
   {
-    "id": "ligar-1",
-    "tipo": "ligar-colunas",
-    "enunciado": "Associe cada termo da frase \"O menino comprou um livro ontem\" à classificação correta.",
-    "itens": [
-      {
-        "texto": "O menino",
-        "respostaCorreta": 0
-      },
-      {
-        "texto": "Comprou um livro",
-        "respostaCorreta": 1
-      },
-      {
-        "texto": "Ontem",
-        "respostaCorreta": 2
-      }
-    ],
+    "id": "4",
+    "tipo": "quiz",
+    "enunciado": "A jovem Mariinha guardava cuidadosamente as cartas antigas que recebia. Qual é a função sintática de 'antigas' em 'as cartas antigas'?",
     "opcoes": [
-      "Sujeito",
-      "Predicado",
+      "Predicativo do objeto",
+      "Adjunto adnominal",
+      "Complemento nominal",
       "Adjunto adverbial de tempo"
     ],
-    "respostaCorreta": null,
-    "explicacao": "O menino é o sujeito; comprou um livro é o predicado; ontem indica tempo."
+    "respostaCorreta": 1,
+    "explicacao": "O adjetivo 'antigas' caracteriza diretamente o substantivo 'cartas', exercendo a função de adjunto adnominal."
+  },
+  {
+    "id": "5",
+    "tipo": "quiz",
+    "enunciado": "Durante as conversas na cidade, os moradores mais antigos de Candeia recordavam histórias que pareciam explicar os mistérios daquele lugar. Qual é a função sintática de 'os moradores mais antigos de Candeia'?",
+    "opcoes": [
+      "Objeto direto",
+      "Sujeito simples",
+      "Adjunto adnominal",
+      "Predicativo do sujeito"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O termo exerce a função de sujeito simples da oração, cujo núcleo é 'moradores'."
   }
 ]

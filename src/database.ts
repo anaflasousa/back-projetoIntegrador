@@ -56,6 +56,8 @@ function carregarPerguntas(): void {
   const conteudo = fs.readFileSync(caminhoJson, 'utf-8');
   const perguntas = JSON.parse(conteudo) as Pergunta[];
 
+  banco.run('DELETE FROM perguntas');
+
   for (const pergunta of perguntas) {
     const dados = JSON.stringify({
       opcoes: pergunta.opcoes,
