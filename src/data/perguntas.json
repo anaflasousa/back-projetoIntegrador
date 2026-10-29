@@ -1,0 +1,65 @@
+
+[
+  {
+    "id": "quiz-1",
+    "tipo": "quiz",
+    "enunciado": "Na frase \"O aluno estudou bastante\", qual é o sujeito?",
+    "opcoes": [
+      "Sujeito",
+      "Objeto direto",
+      "Predicado",
+      "Adjunto adverbial"
+    ],
+    "respostaCorreta": 0,
+    "explicacao": "\"O aluno\" é o sujeito da oração."
+  },
+  {
+    "id": "vf-1",
+    "tipo": "verdadeiro-falso",
+    "enunciado": "O sujeito é sempre a primeira palavra de uma oração.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O sujeito nem sempre aparece no início da oração. Exemplo: \"Chegaram os visitantes\"."
+  },
+  {
+    "id": "erro-1",
+    "tipo": "encontre-erro",
+    "enunciado": "Na frase \"A menina comprou um caderno\", qual análise está incorreta?",
+    "opcoes": [
+      "\"A menina\" é o sujeito.",
+      "\"Comprou um caderno\" é o predicado.",
+      "\"Um caderno\" é o sujeito."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "\"Um caderno\" é objeto direto, não sujeito."
+  },
+  {
+    "id": "ligar-1",
+    "tipo": "ligar-colunas",
+    "enunciado": "Associe cada termo da frase \"O menino comprou um livro ontem\" à classificação correta.",
+    "itens": [
+      {
+        "texto": "O menino",
+        "respostaCorreta": 0
+      },
+      {
+        "texto": "Comprou um livro",
+        "respostaCorreta": 1
+      },
+      {
+        "texto": "Ontem",
+        "respostaCorreta": 2
+      }
+    ],
+    "opcoes": [
+      "Sujeito",
+      "Predicado",
+      "Adjunto adverbial de tempo"
+    ],
+    "respostaCorreta": null,
+    "explicacao": "O menino é o sujeito; comprou um livro é o predicado; ontem indica tempo."
+  }
+]
