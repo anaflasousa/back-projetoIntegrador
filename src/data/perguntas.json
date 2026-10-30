@@ -63,5 +63,315 @@
     ],
     "respostaCorreta": 1,
     "explicacao": "O termo exerce a função de sujeito simples da oração, cujo núcleo é 'moradores'."
-  }
+  },
+  {
+    "id": "6",
+    "tipo": "vf", /*vf é verdadeiro ou falso*/
+    "enunciado": "Na frase 'Samuel encontrou a estátua', o termo 'a estátua' exerce a função de objeto direto.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+      ],
+    "respostaCorreta": 1,
+    "explicacao": "O termo completa o sentido do verbo transitivo direto 'encontrou', sem preposição obrigatória."
+  },
+  {
+    "id": "7",
+    "tipo": "vf",
+    "enunciado": "Na oração 'Os habitantes de Candeia temiam a criatura', o termo 'a criatura' é complemento nominal.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+      ],
+    "respostaCorreta": 2,
+    "explicacao": "'A criatura' é objeto direto, pois completa o sentido do verbo transitivo direto 'temiam'."
+  },
+  {
+    "id": "8",
+    "tipo": "vf",
+    "enunciado": "Na oração 'A moça pegou uma garrafa suja de qualquer coisa e encheu com água da torneira', o termo 'uma garrafa suja de qualquer coisa' é um objeto direto,'",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+      ],
+    "respostaCorreta": 1,
+    "explicacao": "Na oração, o termo “uma garrafa suja de qualquer coisa” exerce a função de objeto direto, pois completa o sentido do verbo transitivo direto “pegou”, sem preposição obrigatória."
+  },
+  {
+    "id": "9",
+    "tipo": "vf",
+    "enunciado": "Em 'A descoberta de Samuel surpreendeu Candeia', o termo 'de Samuel' é objeto indireto.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+      ],
+    "respostaCorreta": 2,
+    "explicacao": "'De Samuel' é adjunto adnominal, pois caracteriza ou especifica o substantivo 'descoberta'."
+  },
+  {
+    "id": "10",
+    "tipo": "vf",
+    "enunciado": "Em 'A família da casa verde, que ficava quase de frente para a igrejinha, deixou o lar com todos os móveis' o termo entre vírgulas é uma oração explicativa.",
+    "opcoes": [
+      "Verdadeiro",
+      "Falso"
+      ],
+    "respostaCorreta": 1,
+    "explicacao": "O trecho “que ficava quase de frente para a igrejinha” é uma oração subordinada adjetiva explicativa, pois caracteriza o substantivo “casa” e apresenta uma informação adicional."
+  },
+  {
+    "id": "11",
+    "tipo": "an", /*an é analise. tipo de questão 04*/
+    "enunciado": "Na frase “Pediu à menina que tomasse a garrafa da mão do vagabundo”, o uso da crase em “à menina” está relacionado à regência verbal e à presença do artigo definido feminino. Assinale a alternativa que apresenta uma análise gramatical INCORRETA:",
+    "opcoes": [
+      "A crase ocorre pela fusão da preposição “a”, exigida pelo verbo “pedir”, com o artigo definido feminino “a”, que antecede o substantivo “menina”.",
+      "O verbo “pedir”, nesse contexto, apresenta transitividade indireta em relação ao termo “à menina”, que funciona como objeto indireto.",
+      "A presença da preposição exigida pelo verbo “pedir” justifica o uso da crase quando há também um artigo feminino antes do substantivo.",
+      "A crase ocorre porque “menina” exerce a função de sujeito da oração subordinada introduzida pelo termo “que”."
+    ],
+    "respostaCorreta": 4,
+    "explicacao": "À menina” não exerce função de sujeito. É objeto indireto do verbo “pediu”, indicando a quem o pedido foi dirigido. O sujeito da oração subordinada é oculto: aquele que deveria tomar a garrafa"
+  },
+  {
+    "id": "12",
+    "tipo": "an",
+    "enunciado": "Analise a função sintática e morfológica do termo “que” na frase “Ela chamou a chuva, pediu que viesse”. Assinale a alternativa que apresenta uma análise gramatical INCORRETA:",
+    "opcoes": [
+      "O termo “que” é um pronome relativo, pois retoma o substantivo “chuva” e estabelece uma relação entre as orações.",
+      "O termo “que” é uma conjunção integrante, pois introduz uma oração subordinada substantiva objetiva direta.",
+      "A oração “que viesse” funciona como objeto direto do verbo “pediu”, completando seu sentido.",
+      "O verbo “pediu” é transitivo direto nesse contexto, e a oração introduzida por “que” exerce a função de objeto direto."
+    ],
+    "respostaCorreta": 1,
+    "explicacao": "O termo “que” não é pronome relativo, pois não retoma “chuva” como antecedente de uma oração adjetiva. É uma conjunção integrante, que introduz a oração subordinada substantiva objetiva direta “que viesse”."
+  },
+  {
+    "id": "13",
+    "tipo": "an",
+    "enunciado": "Na frase “Moravam numa casa de nada na ladeira do Horto, no caminho QUE leva até a estátua de Padre Cícero”, o termo destacado “QUE” estabelece uma relação entre as orações. Assinale a alternativa que apresenta uma análise gramatical INCORRETA:",
+    "opcoes": [
+      "O termo “que” é um pronome relativo, pois retoma o substantivo “caminho” e introduz uma oração subordinada adjetiva restritiva.",
+      "O termo “que” exerce a função sintática de sujeito da oração subordinada, pois pratica a ação expressa pelo verbo “leva”.",
+      "A oração “que leva até a estátua de Padre Cícero” caracteriza e restringe o sentido do substantivo “caminho”",
+      "O termo “que” é uma conjunção integrante, pois introduz uma oração subordinada substantiva objetiva direta."
+    ],
+    "respostaCorreta": 4,
+    "explicacao": "O “que” é um pronome relativo, retoma “caminho” e exerce a função de sujeito do verbo “leva”. A oração é subordinada adjetiva restritiva, não substantiva."
+  },
+  {
+    "id": "14",
+    "tipo": "an",
+    "enunciado": "Na frase “Samuel contou aos moradores as histórias que ouvira dentro da cabeça do santo”, analise as funções sintáticas dos termos destacados. Assinale a alternativa que apresenta uma análise gramatical INCORRETA:",
+    "opcoes": [
+      "O termo “Samuel” exerce a função de sujeito simples da oração.",
+      "O termo “aos moradores” exerce a função de objeto indireto, pois completa o sentido do verbo “contou” com o auxílio de uma preposição.",
+      "O termo “as histórias” exerce a função de objeto direto, pois representa aquilo que foi contado por Samuel.",
+      "O termo “dentro da cabeça do santo” exerce a função de objeto indireto, pois completa o sentido do verbo “ouvira”."
+    ],
+    "respostaCorreta": 4,
+    "explicacao": "“Dentro da cabeça do santo” é adjunto adverbial de lugar, pois indica onde as histórias foram ouvidas."
+  },
+  {
+    "id": "15",
+    "tipo": "an",
+    "enunciado": "Na frase “As vozes das mulheres despertaram a curiosidade de Samuel”, analise a estrutura sintática da oração. Assinale a alternativa que apresenta uma análise gramatical INCORRETA:",
+    "opcoes": [
+      "O termo “As vozes das mulheres” exerce a função de sujeito simples da oração.",
+      "O termo “das mulheres” exerce a função de complemento nominal, pois completa o sentido do substantivo “vozes”.",
+      "O termo “a curiosidade de Samuel” exerce a função de objeto direto, pois completa o sentido do verbo “despertaram”.",
+      "O termo “de Samuel” exerce a função de complemento nominal, pois completa o sentido do substantivo abstrato “curiosidade”."
+    ],
+    "respostaCorreta": 2,
+    "explicacao": "“Das mulheres” funciona como adjunto adnominal, pois indica quem produz as vozes. Já “de Samuel” é complemento nominal, pois indica quem sente a curiosidade."
+  },    
+  {
+  "questoes": [
+    {
+      "id": "16",
+      "tipo": "lc", //lc é ligue as colunas
+      "enunciado": "Relacione as frases da Coluna I aos tempos verbais correspondentes da Coluna II.",
+      "colunaA": [
+        "Pelo que via e por tudo que imaginava existir nele.",
+        "O doutor levantou a vista e olhou a cara do paciente.",
+        "Eu moro na cabeça e escuto os pensamentos dos santos, doutor.",
+        "Quando todas as mulheres já estavam devidamente concentradas e ajoelhadas, rezando [...]"
+      ],
+      "colunaB": [
+        "Presente do indicativo.",
+        "Pretérito imperfeito do indicativo.",
+        "Pretérito perfeito do indicativo.",
+        "Pretérito imperfeito do indicativo."
+      ],
+      "itens": [
+        {
+          "texto": "Pelo que via e por tudo que imaginava existir nele.",
+          "respostaCorreta": 1
+        },
+        {
+          "texto": "O doutor levantou a vista e olhou a cara do paciente.",
+          "respostaCorreta": 2
+        },
+        {
+          "texto": "Eu moro na cabeça e escuto os pensamentos dos santos, doutor.",
+          "respostaCorreta": 0
+        },
+        {
+          "texto": "Quando todas as mulheres já estavam devidamente concentradas e ajoelhadas, rezando [...].",
+          "respostaCorreta": 3
+        }
+      ],
+      "Explicação": "As formas verbais 'via', 'imaginava' e 'estavam' estão no pretérito imperfeito do indicativo; 'levantou' e 'olhou' estão no pretérito perfeito; 'moro' e 'escuto' estão no presente do indicativo."
+    }
+  ]
+  },
+  
+{
+  "questoes": [
+    {
+      "id": "17",
+      "tipo": "lc",
+      "enunciado": "Relacione as orações da Coluna I às classificações correspondentes da Coluna II.",
+      "colunaA": [
+        "O médico perguntou qual era o problema.",
+        "Era um fulminante olhar de reprovação que condenou Candeia à miséria.",
+        "Além do mais, as consultas eram rápidas e, se alguém furasse a fila, era melhor [...]"
+      ],
+      "colunaB": [
+        "Oração subordinada adverbial.",
+        "Oração subordinada substantiva.",
+        "Oração subordinada adjetiva."
+      ],
+      "itens": [
+        {
+          "texto": "O médico perguntou qual era o problema.",
+          "respostaCorreta": 1
+        },
+        {
+          "texto": "Era um fulminante olhar de reprovação que condenou Candeia à miséria.",
+          "respostaCorreta": 2
+        },
+        {
+          "texto": "Além do mais, as consultas eram rápidas e, se alguém furasse a fila, era melhor [...].",
+          "respostaCorreta": 0
+        }
+      ],
+      "Explicação": "Na primeira frase, 'qual era o problema' é uma oração subordinada substantiva objetiva direta. Na segunda, 'que condenou Candeia à miséria' é uma oração subordinada adjetiva restritiva. Na terceira, 'se alguém furasse a fila' é uma oração subordinada adverbial condicional."
+    }
+  ]
+},
+
+{
+  "questoes": [
+    {
+      "id": "18",
+      "tipo": "lc",
+      "enunciado": "Relacione os termos destacados da Coluna I às classificações correspondentes da Coluna II.",
+      "colunaA": [
+        "Ela nunca achou QUE encontraria alguém.",
+        "Escolheu o nome QUE achava o mais bonito do mundo, aprendido na missa.",
+        "Mas anunciavam a tempo de fazer pedidos A família e tomar providências.",
+        "Mariinha esperou A vida inteira, todos os dias."
+      ],
+      "colunaB": [
+        "A",
+        "Pronome relativo",
+        "À",
+        "Conjunção integrante"
+      ],
+      "itens": [
+        {
+          "texto": "Ela nunca achou QUE encontraria alguém.",
+          "respostaCorreta": 3
+        },
+        {
+          "texto": "Escolheu o nome QUE achava o mais bonito do mundo, aprendido na missa.",
+          "respostaCorreta": 1
+        },
+        {
+          "texto": "Mas anunciavam a tempo de fazer pedidos A família e tomar providências.",
+          "respostaCorreta": 0
+        },
+        {
+          "texto": "Mariinha esperou A vida inteira, todos os dias.",
+          "respostaCorreta": 2
+        }
+      ],
+      "Explicação": "Na primeira frase, 'que' é conjunção integrante, introduzindo uma oração subordinada substantiva objetiva direta. Na segunda, 'que' é pronome relativo, retomando 'nome'. Na terceira, 'a' é artigo definido feminino que acompanha 'família'. Na quarta, 'a' é uma preposição que integra a expressão de tempo 'a vida inteira'."
+    }
+  ]
+},
+// a partir dessa questao peguei do chat pq to com sono 
+{
+  "id": "19",
+  "tipo": "lc",
+  "enunciado": "Relacione os termos destacados da Coluna I às suas respectivas classificações da Coluna II.",
+  "colunaA": [
+    "Samuel descobriu QUE havia vozes dentro da cabeça do santo.",
+    "O homem QUE encontrou Samuel ficou surpreso.",
+    "O médico entregou o resultado AO paciente.",
+    "Samuel caminhou PELA cidade de Candeia."
+  ],
+  "colunaB": [
+    "Conjunção integrante",
+    "Pronome relativo",
+    "Contração de preposição com artigo",
+    "Contração de preposição com artigo"
+  ],
+  "itens": [
+    {
+      "texto": "Samuel descobriu QUE havia vozes dentro da cabeça do santo.",
+      "respostaCorreta": 0
+    },
+    {
+      "texto": "O homem QUE encontrou Samuel ficou surpreso.",
+      "respostaCorreta": 1
+    },
+    {
+      "texto": "O médico entregou o resultado AO paciente.",
+      "respostaCorreta": 2
+    },
+    {
+      "texto": "Samuel caminhou PELA cidade de Candeia.",
+      "respostaCorreta": 3
+    }
+  ],
+  "Explicação": "Na primeira frase, 'que' é conjunção integrante. Na segunda, é pronome relativo, retomando 'homem'. 'Ao' resulta da contração da preposição 'a' com o artigo 'o'. 'Pela' resulta da contração da preposição 'por' com o artigo 'a'."
+},
+
+{
+  "id": "20",
+  "tipo": "lc",
+  "enunciado": "Relacione os termos destacados da Coluna I às suas respectivas funções sintáticas da Coluna II.",
+  "colunaA": [
+    "Samuel encontrou A CABEÇA DO SANTO.",
+    "AS MULHERES rezavam diante da estátua.",
+    "O rapaz precisava DE AJUDA.",
+    "O médico parecia PREOCUPADO com a situação."
+  ],
+  "colunaB": [
+    "Objeto direto",
+    "Sujeito",
+    "Objeto indireto",
+    "Predicativo do sujeito"
+  ],
+  "itens": [
+    {
+      "texto": "Samuel encontrou A CABEÇA DO SANTO.",
+      "respostaCorreta": 0
+    },
+    {
+      "texto": "AS MULHERES rezavam diante da estátua.",
+      "respostaCorreta": 1
+    },
+    {
+      "texto": "O rapaz precisava DE AJUDA.",
+      "respostaCorreta": 2
+    },
+    {
+      "texto": "O médico parecia PREOCUPADO com a situação.",
+      "respostaCorreta": 3
+    }
+  ],
+  "Explicação": "A expressão 'a cabeça do santo' completa diretamente o verbo encontrar, sendo objeto direto. 'As mulheres' é o sujeito da oração. 'De ajuda' completa o verbo precisar por meio de preposição, sendo objeto indireto. 'Preocupado' atribui uma característica ao sujeito por meio do verbo de ligação parecer, sendo predicativo do sujeito."
+}
 ]
