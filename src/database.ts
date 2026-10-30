@@ -14,6 +14,8 @@ interface Pergunta {
   enunciado: string;
   opcoes?: string[];
   itens?: ItemLigar[];
+  colunaA?: string[];
+  colunaB?: string[];
   respostaCorreta: number | null;
   explicacao: string;
 }
@@ -61,9 +63,13 @@ function carregarPerguntas(): void {
   for (const pergunta of perguntas) {
     const dados = JSON.stringify({
       opcoes: pergunta.opcoes,
-      itens: pergunta.itens
+      itens: pergunta.itens,
+      colunaA: pergunta.colunaA,
+      colunaB: pergunta.colunaB
     });
-
+    const respostaSalvar = pergunta.respostaCorreta !== undefined
+      ? JSON.stringify(pergunta.respostaCorreta)
+      : "null";
     banco.run(
       `INSERT OR REPLACE INTO perguntas
        (id, tipo, enunciado, dados, resposta_correta, explicacao)
@@ -73,7 +79,7 @@ function carregarPerguntas(): void {
         pergunta.tipo,
         pergunta.enunciado,
         dados,
-        JSON.stringify(pergunta.respostaCorreta),
+        respostaSalvar,
         pergunta.explicacao
       ]
     );
@@ -81,10 +87,19 @@ function carregarPerguntas(): void {
 }
 
 
+
 export function listarPerguntas(tipo: string) {
+  // Permite que o frontend use "ligar-colunas" mesmo que o JSON utilize "lc".
+  const tipos: Record<string, string> = {
+    'ligar-colunas': 'lc',
+    'verdadeiro-falso': 'vf'
+  };
+
+  const tipoBanco = tipos[tipo] ?? tipo;
+
   const resultado = banco.exec(
     `SELECT id, tipo, enunciado, dados
-     FROM perguntas WHERE tipo = '${tipo.replace(/'/g, "''")}'`
+     FROM perguntas WHERE tipo = '${tipoBanco.replace(/'/g, "''")}'`
   );
 
   if (resultado.length === 0) return [];
@@ -92,9 +107,11 @@ export function listarPerguntas(tipo: string) {
   return resultado[0].values.map((linha) => {
     const dados = JSON.parse(String(linha[3]));
 
-    // Não envia as respostas corretas dos termos para o frontend.
-    if (linha[1] === 'ligar-colunas' && dados.itens) {
-      dados.itens = dados.itens.map(
+    if (linha[1] === 'lc') {
+      dados.opcoes = dados.colunaB ?? [];
+
+      // Não envia as respostas corretas para o frontend.
+      dados.itens = (dados.itens ?? []).map(
         (item: { texto: string }) => ({
           texto: item.texto
         })
@@ -130,8 +147,8 @@ export function verificarResposta(
   const [tipo, dadosTexto, respostaCorretaTexto, explicacao] =
     resultado[0].values[0];
 
-  // Validação das associações do desafio Ligar colunas.
-  if (tipo === 'ligar-colunas') {
+  // Validação das associações do desafio Ligar colunas
+  if (tipo === 'lc' || tipo === 'ligar-colunas') {
     const dados = JSON.parse(String(dadosTexto));
     const itens = dados.itens as ItemLigar[];
 
@@ -161,7 +178,7 @@ export function verificarResposta(
     };
   }
 
-  // Validação dos outros desafios.
+  // Validação dos outros desafios
   return {
     correta: JSON.stringify(resposta) === String(respostaCorretaTexto),
     explicacao: String(explicacao)

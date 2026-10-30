@@ -1,4 +1,4 @@
-
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import {
@@ -18,21 +18,30 @@ app.get('/', (_req, res) => {
 });
 
 app.get('/api/perguntas/:tipo', (req, res) => {
-  const tiposValidos = [
-    'quiz',
-    'verdadeiro-falso',
-    'encontre-erro',
-    'ligar-colunas'
-  ];
+  const tipoParam = req.params.tipo;
 
-  const tipo = req.params.tipo;
+  // Dicionário mapeando o que o Frontend pede -> para o que está no JSON/Banco
+  const mapeamentoTipos: Record<string, string> = {
+    'quiz': 'quiz',
+    'verdadeiro-falso': 'vf',
+    'vf': 'vf',
+    'an': 'an',
+    'ligar-colunas': 'lc',
+    'lc': 'lc',
+    'encontre-erro': 'an' 
+  };
 
-  if (!tiposValidos.includes(tipo)) {
+
+  // Verifica se o parâmetro enviado pela URL existe no nosso mapa
+  if (!(tipoParam in mapeamentoTipos)) {
     res.status(400).json({ mensagem: 'Tipo de quiz inválido.' });
     return;
   }
 
-  res.json(listarPerguntas(tipo));
+  // Pega o tipo de quiz da questão
+  const tipoBanco = mapeamentoTipos[tipoParam];
+
+  res.json(listarPerguntas(tipoBanco));
 });
 
 app.post('/api/perguntas/:id/responder', (req, res) => {
