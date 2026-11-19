@@ -1,5 +1,6 @@
 
-import initSqlJs, { type Database } from 'sql.js';
+import initSqlJs, { type Database, type SqlValue } from 'sql.js';
+import bcrypt from 'bcryptjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -19,6 +20,19 @@ interface Pergunta {
   respostaCorreta: number | null;
   explicacao: string;
 }
+  
+
+export interface Usuario {
+  id: number;
+  nome: string;
+  email: string;
+  senhaHash: string;
+  ativo: boolean;
+  criadoEm: string;
+  ultimoLogin: string | null;
+}
+
+export type UsuarioPublico = Omit<Usuario, 'senhaHash'>;
 
 const pastaDados = path.resolve(process.cwd(), 'src', 'data');
 const caminhoJson = path.join(pastaDados, 'perguntas.json');
@@ -49,6 +63,19 @@ export async function iniciarBanco(): Promise<void> {
       explicacao TEXT NOT NULL
     )
   `);
+  
+  banco.run(`
+  CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    senha_hash TEXT NOT NULL,
+    ativo INTEGER NOT NULL DEFAULT 1,
+    criado_em TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    ultimo_login TEXT
+  )
+`);
+  
 
   carregarPerguntas();
   salvarBanco();
@@ -184,7 +211,100 @@ export function verificarResposta(
     explicacao: String(explicacao)
   };
 }
+const colunasUsuario =
+  'id, nome, email, senha_hash, ativo, criado_em, ultimo_login';
 
+function linhaParaUsuario(linha: SqlValue[]): Usuario {
+  return {
+    id: Number(linha[0]),
+    nome: String(linha[1]),
+    email: String(linha[2]),
+    senhaHash: String(linha[3]),
+    ativo: Number(linha[4]) === 1,
+    criadoEm: String(linha[5]),
+    ultimoLogin: linha[6] === null ? null : String(linha[6])
+  };
+}
+
+function paraPublico(usuario: Usuario): UsuarioPublico {
+  const { senhaHash: _hash, ...publico } = usuario;
+  return publico;
+}
+
+function buscarUsuarioPorEmail(email: string): Usuario | null {
+  const resultado = banco.exec(
+    `SELECT ${colunasUsuario} FROM usuarios WHERE email = ?`,
+    [email]
+  );
+
+  if (resultado.length === 0) return null;
+  return linhaParaUsuario(resultado[0].values[0]);
+}
+
+export function buscarUsuarioPorId(id: number): UsuarioPublico | null {
+  const resultado = banco.exec(
+    `SELECT ${colunasUsuario} FROM usuarios WHERE id = ? AND ativo = 1`,
+    [id]
+  );
+
+  if (resultado.length === 0) return null;
+  return paraPublico(linhaParaUsuario(resultado[0].values[0]));
+}
+export async function cadastrarUsuario(
+  nome: string,
+  email: string,
+  senha: string
+): Promise<{ ok: true; usuario: UsuarioPublico } | { ok: false; erro: string }> {
+  const nomeLimpo = nome.trim();
+  const emailNorm = email.trim().toLowerCase();
+
+  // Validações básicas
+  if (!nomeLimpo || !emailNorm || !senha) {
+    return { ok: false, erro: 'Preencha todos os campos' };
+  }
+  if (senha.length < 8) {
+    return { ok: false, erro: 'A senha precisa ter pelo menos 8 caracteres' };
+  }
+  if (buscarUsuarioPorEmail(emailNorm)) {
+    return { ok: false, erro: 'E-mail já cadastrado' };
+  }
+
+  // Embaralha a senha (12 é o "custo": quanto maior, mais seguro e mais lento)
+  const senhaHash = await bcrypt.hash(senha, 12);
+
+  banco.run(
+    'INSERT INTO usuarios (nome, email, senha_hash) VALUES (?, ?, ?)',
+    [nomeLimpo, emailNorm, senhaHash]
+  );
+
+  const id = banco.exec('SELECT last_insert_rowid()')[0].values[0][0] as number;
+  salvarBanco();
+
+  const usuario = buscarUsuarioPorId(id);
+  if (!usuario) return { ok: false, erro: 'Não foi possível criar o usuário' };
+
+  return { ok: true, usuario };
+}
+
+export async function autenticarUsuario(
+  email: string,
+  senha: string
+): Promise<UsuarioPublico | null> {
+  const usuario = buscarUsuarioPorEmail(email.trim().toLowerCase());
+  if (!usuario || !usuario.ativo) return null;
+
+  // Compara a senha digitada com o hash guardado
+  const confere = await bcrypt.compare(senha, usuario.senhaHash);
+  if (!confere) return null;
+
+  banco.run(
+    'UPDATE usuarios SET ultimo_login = CURRENT_TIMESTAMP WHERE id = ?',
+    [usuario.id]
+  );
+  salvarBanco();
+
+  return paraPublico(usuario);
+}
 
 export function obterBanco(): Database {
   return banco;
